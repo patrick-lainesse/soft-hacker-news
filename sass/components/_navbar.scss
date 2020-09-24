@@ -1,0 +1,25 @@
+ul {
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.btn-clear {
+  border: none;
+  background: transparent;
+}
+
+.nav-link {
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+}

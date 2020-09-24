@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch:sass": "node-sass sass/main.scss css/style.css -w",
+    "watch:sass": "node-sass sass/main.scss app/index.css -w",
     "devserver": "webpack-dev-server",
     "start": "npm-run-all --parallel devserver watch:sass"
   },
@@ -21,6 +21,7 @@
   "author": "Patrick Lainesse",
   "license": "ISC",
   "dependencies": {
+    "copy-webpack-plugin": "^6.1.0",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
@@ -30,8 +31,10 @@
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
     "babel-loader": "^8.1.0",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "css-loader": "^4.2.2",
     "html-webpack-plugin": "^4.4.1",
+    "npm-run-all": "^4.1.5",
     "style-loader": "^1.2.1",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
