@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 // Curly braces: props that are destructured when the function is invoked
 function CategoryNav({selected, onUpdateCategory}) {
@@ -19,6 +20,11 @@ function CategoryNav({selected, onUpdateCategory}) {
             ))}
         </ul>
     )
+}
+
+CategoryNav.propTypes = {
+    selected: PropTypes.string.isRequired,
+    onUpdateCategory: PropTypes.func.isRequired
 }
 
 export default class Navbar extends React.Component {
