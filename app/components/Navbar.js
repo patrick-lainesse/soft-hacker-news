@@ -1,5 +1,26 @@
 import React from 'react'
 
+// Curly braces: props that are destructured when the function is invoked
+function CategoryNav({selected, onUpdateCategory}) {
+
+    const categories = ['Top', 'New']
+
+    return (
+        <ul className='flex-center'>
+            {categories.map((category) => (
+                <li key={category}>
+                    <button
+                        className='btn-clear nav-link'
+                        style={category === selected ? {color: 'rgb(187, 46, 31)'} : null}
+                        onClick={() => onUpdateCategory(category)}>
+                        {category}
+                    </button>
+                </li>
+            ))}
+        </ul>
+    )
+}
+
 export default class Navbar extends React.Component {
     constructor(props) {
         super(props);
@@ -19,21 +40,15 @@ export default class Navbar extends React.Component {
 
     render() {
 
-        const categories = ['Top', 'New']
+        const {selectedCategory} = this.state
 
         return (
-            <ul className='flex-center'>
-                {categories.map((category) => (
-                    <li key={category}>
-                        <button
-                            className='btn-clear nav-link'
-                            style={category === this.state.selectedCategory ? {color: 'rgb(187, 46, 31)'} : null}
-                            onClick={() => this.updateCategory(category)}>
-                            {category}
-                        </button>
-                    </li>
-                ))}
-            </ul>
+            <React.Fragment>
+                <CategoryNav
+                    selected = {selectedCategory}
+                    onUpdateCategory = {this.updateCategory}
+                />
+            </React.Fragment>
         )
     }
 }
